@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ECC6DE;
+    overflow: hidden;
+    transition: .3s;
+}
+
+#content{
+    perspective: 1000px;
+    /* 景深 两者配合使用 */
+    /* transform-style: preserve-3d; */
+}
+
+.wrap{
+    width: 1190px;
+    margin: 100px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    transform-style: preserve-3d;
+}
+
+.wrap .box{
+    width: 150px;
+    height: 150px;
+    margin: 12px 0;
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: .5s;
+}
+
+.box div{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 10px solid rgba(0, 0, 0, .1);
+    position: absolute;
+
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 130px;
+    text-shadow: 0 3px 10px #000;
+    cursor: default;
+}
+
+/* 前面 */
+.box div:nth-child(1){
+    transform: translateZ(75px);
+}
+/* 后面 */
+.box div:nth-child(2){
+    transform: translateZ(-75px);
+}
+/* 上面 */
+.box div:nth-child(3){
+    transform:rotateX(90deg) translateZ(75px);
+}
+/* 下面 */
+.box div:nth-child(4){
+    transform:rotateX(-90deg) translateZ(75px);
+}
+/* 左面 */
+.box div:nth-child(5){
+    transform:rotateY(90deg) translateZ(75px);
+}
+/* 右面 */
+.box div:nth-child(6){
+    transform:rotateY(-90deg) translateZ(75px);
+}
